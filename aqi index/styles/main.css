@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #B8B5FF;
+  background: url(../pexels-vitaly-vlasov-1570099.jpg) center/cover no-repeat;
 }
 
 .navbar {
@@ -25,6 +25,8 @@ body {
           justify-content: start;
   font-family: Ubuntu;
   display: flex;
+  -webkit-box-shadow: 0px 2px 15px 1px black;
+          box-shadow: 0px 2px 15px 1px black;
 }
 
 .navbar .titleText {
@@ -56,7 +58,62 @@ body {
   padding: 4px 10px;
 }
 
+.mainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainContainer .homepage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainContainer .homepage .containerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainContainer .homepage .containerBox a {
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Ubuntu;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.mainContainer .homepage .containerBox .btn {
+  background: #7868E6;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 9px;
+}
+
+.homepage {
+  width: 30%;
+}
+
 .container {
+  width: 70%;
   height: calc(100vh - 10vh);
   color: white;
   margin: 50px;
@@ -78,10 +135,15 @@ body {
 
 .container .divBox input[type="text"] {
   font-family: Ubuntu;
-  font-size: 20px;
+  width: 500px;
+  font-size: 25px;
   padding: 2px 4px;
   border: 2px solid #333;
   cursor: text;
+}
+
+.container .divBox input[type="text"]:focus {
+  outline: none;
 }
 
 .container .divBox input[type="text"]::-webkit-input-placeholder {
@@ -106,7 +168,7 @@ body {
 
 .container .divBox .search {
   font-family: Ubuntu;
-  font-size: 20px;
+  font-size: 25px;
   padding: 2px 10px;
   margin-right: 30px;
   cursor: pointer;
