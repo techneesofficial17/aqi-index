@@ -2,6 +2,19 @@ let lat, long;
 const API = '0be1e7e3cfbb30443197baae89a01de7';
 const token = '91dc1ea0bf60df00ea4634884603b33aac7478a8';
 const mainKey = '38454c49-1624-42ed-b186-6ca981592b6c';
+
+/// pollution values of html text ;
+
+const co = document.getElementById('co');
+const no = document.getElementById('no');
+const nd = document.getElementById('nd');
+const o = document.getElementById('o');
+const sd = document.getElementById('sd');
+const fp = document.getElementById('fp');
+const am = document.getElementById('am');
+const pm = document.getElementById('pm');
+const aqic = document.getElementById('aqic');
+
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
         long = position.coords.longitude;
@@ -14,7 +27,31 @@ if (navigator.geolocation) {
                     `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${long}&appid=${API}`
                 )
                 .then(data => data.json())
-                .then(info => console.log(info));
+                .then(info => {
+                    let { list } = info;
+                    let { components, main } = list[0];
+                    console.log(components);
+                    co.textContent = components.co;
+                    no.textContent = components.no;
+                    nd.textContent = components.no2;
+                    o.textContent = components.o3;
+                    sd.textContent = components.so2;
+                    fp.textContent = components.pm2_5;
+                    am.textContent = components.nh3;
+                    pm.textContent = components.pm10;
+                    console.log(main.aqi);
+                    if (main.aqi === 1) {
+                        aqic.textContent = 'Good';
+                    } else if (main.aqi === 2) {
+                        aqic.textContent = 'Fair';
+                    } else if (main.aqi === 3) {
+                        aqic.textContent = 'Moderate';
+                    } else if (main.aqi === 4) {
+                        aqic.textContent = 'Poor';
+                    } else {
+                        aqic.textContent = 'Very Poor';
+                    }
+                });
         }
 
         pollutionData();
