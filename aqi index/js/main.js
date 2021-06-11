@@ -49,7 +49,7 @@ async function runFunction() {
                     if (aqi === '-') {
                         aqi = 'N/A';
                     }
-                    let divbox = document.createElement('div');
+                    const divbox = document.createElement('div');
                     divbox.setAttribute('class', 'itemBox');
 
                     var innerHtmlText = `<img src="./aqi.jpg" alt="">
@@ -59,9 +59,7 @@ async function runFunction() {
                                         </div>
                                         <p class="cityname">${name}</p>`;
                     divbox.innerHTML += innerHtmlText;
-                    let index = document.getElementById('aqi');
-                    console.log(aqi);
-                    console.log(index);
+
                     maincontainer.appendChild(divbox);
                 });
             });
