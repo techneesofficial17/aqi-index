@@ -191,7 +191,7 @@ body {
   color: black;
   height: 300px;
   width: 200px;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 6px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -218,6 +218,8 @@ body {
 
 .container .itemBox img {
   width: 40%;
+  -webkit-clip-path: circle(50%);
+          clip-path: circle(50%);
 }
 
 .container .itemBox .apiData {
@@ -243,5 +245,9 @@ body {
   font-weight: bold;
   font-size: 38px;
   margin: 10px 0;
+}
+
+.color {
+  color: limegreen;
 }
 /*# sourceMappingURL=main.css.map */

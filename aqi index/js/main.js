@@ -14,6 +14,8 @@ if (navigator.geolocation) {
 const search = document.querySelector('#search');
 const searchBtn = document.getElementById('searchBtnn');
 const maincontainer = document.getElementById('maincontainer');
+const alert = document.querySelector('.color');
+
 // running the function
 
 searchBtn.addEventListener('click', () => {
@@ -54,10 +56,12 @@ async function runFunction() {
                                         <div class="apiData">
                                             <p class="text">AQI : </p>
                                             <p id="aqi" class="aqi">${aqi}</p>
-
                                         </div>
                                         <p class="cityname">${name}</p>`;
                     divbox.innerHTML += innerHtmlText;
+                    let index = document.getElementById('aqi');
+                    console.log(aqi);
+                    console.log(index);
                     maincontainer.appendChild(divbox);
                 });
             });

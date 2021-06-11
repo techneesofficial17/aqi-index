@@ -129,6 +129,7 @@ body {
         }
         img {
             width: 40%;
+            clip-path: circle(50%);
         }
         .apiData {
             align-items: center;
@@ -149,11 +150,16 @@ body {
         color: black;
         height: 300px;
         width: 200px;
-        background: white;
+        background: rgba($color: #fff,
+        $alpha: 0.7);
         border-radius: 6px;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
         flex-direction: column;
     }
+}
+
+.color {
+    color: limegreen;
 }
