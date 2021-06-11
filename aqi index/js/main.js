@@ -1,5 +1,4 @@
-var lat;
-var long;
+let lat, long;
 const API = '0be1e7e3cfbb30443197baae89a01de7';
 const token = '91dc1ea0bf60df00ea4634884603b33aac7478a8';
 const mainKey = '38454c49-1624-42ed-b186-6ca981592b6c';
@@ -7,6 +6,18 @@ if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
         long = position.coords.longitude;
         lat = position.coords.latitude;
+
+        function pollutionData() {
+            console.log(lat);
+            console.log(long);
+            fetch(
+                    `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${long}&appid=${API}`
+                )
+                .then(data => data.json())
+                .then(info => console.log(info));
+        }
+
+        pollutionData();
     });
 }
 // getting the dom element
