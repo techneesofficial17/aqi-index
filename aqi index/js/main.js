@@ -115,3 +115,22 @@ async function runFunction() {
         alert('Empty Value');
     }
 }
+
+function initMap() {
+    let map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 28.3949, lng: 84.124 },
+        zoom: 7,
+        disableDefaultUI: true,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: true,
+        rotateControl: false,
+        fullscreenControl: true,
+        zoomcontrol: false,
+    });
+    const marker = new google.maps.Marker({
+        position: myLatlng,
+        map,
+        title: 'click to zoom',
+    });
+}

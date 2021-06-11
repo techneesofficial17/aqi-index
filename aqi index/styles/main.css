@@ -292,4 +292,11 @@ body {
   font-size: 35px;
   font-weight: bold;
 }
+
+#map {
+  margin: 0 auto;
+  height: 500px;
+  width: 800px;
+  border: 2px solid black;
+}
 /*# sourceMappingURL=main.css.map */
