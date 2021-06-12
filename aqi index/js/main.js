@@ -30,7 +30,6 @@ if (navigator.geolocation) {
                 .then(info => {
                     let { list } = info;
                     let { components, main } = list[0];
-                    console.log(components);
                     co.textContent = components.co;
                     no.textContent = components.no;
                     nd.textContent = components.no2;
@@ -39,7 +38,6 @@ if (navigator.geolocation) {
                     fp.textContent = components.pm2_5;
                     am.textContent = components.nh3;
                     pm.textContent = components.pm10;
-                    console.log(main.aqi);
                     if (main.aqi === 1) {
                         aqic.textContent = 'Good';
                     } else if (main.aqi === 2) {
@@ -76,19 +74,16 @@ searchBtn.addEventListener('click', () => {
 // fetching the data from the API
 
 async function runFunction() {
-    console.log('runned');
     if (search.value !== '') {
         maincontainer.innerHTML = '';
-
-        console.log('runned');
         await fetch(
                 `http://api.waqi.info/search/?token=${token}&keyword=${search.value}`
             )
             .then(data => data.json())
             .then(result => {
                 let { data } = result;
-                data.forEach(item => {
-                    console.log(item);
+                for (let i = 0; i <= 7; i++) {
+                    let item = data[i];
                     let { aqi } = item;
                     let { country, name } = item.station;
                     if (country === 'NP') {
@@ -109,7 +104,7 @@ async function runFunction() {
                     divbox.innerHTML += innerHtmlText;
 
                     maincontainer.appendChild(divbox);
-                });
+                }
             });
     } else {
         alert('Empty Value');
@@ -136,11 +131,13 @@ async function initMap() {
         .then(values => {
             let { data } = values;
             data.forEach(async item => {
-                console.log(item);
                 let lat = item.station.geo[0];
                 let long = item.station.geo[1];
                 let { name } = item.station;
                 let aqi = item.aqi;
+                if (aqi === '-') {
+                    aqi = 'Calculating ... ';
+                }
                 const marker = new google.maps.Marker({
                     position: {
                         lat: lat,
@@ -162,8 +159,7 @@ async function initMap() {
                         <div class="box">
                             <p class="name">${name}</p>
                             <br>
-                            <h2>AQI: ${aqi}</h2>
-                                                        
+                            <h4>AQI: <span style="font-size: 20px;">${aqi}</span> </h4>
                             <br>
                             <hr>
                             <h3>Air Quaity</h3>
