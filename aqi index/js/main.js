@@ -158,7 +158,7 @@ async function initMap() {
                         let fd = list[0].components;
                         const infotext = `
                         <div class="box">
-                            <p class="name">${name}</p>
+                            <p style="font-weight=bold;" class="name">${name}</p>
                             <br>
                             <h4>AQI: <span style="font-size: 20px;">${aqi}</span> </h4>
                             <br>
