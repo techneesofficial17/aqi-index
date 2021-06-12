@@ -116,21 +116,81 @@ async function runFunction() {
     }
 }
 
-function initMap() {
-    let map = new google.maps.Map(document.getElementById('map'), {
+async function initMap() {
+    let gmap = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 28.3949, lng: 84.124 },
         zoom: 7,
         disableDefaultUI: true,
-        mapTypeControl: false,
-        scaleControl: false,
+        mapTypeControl: true,
+        scaleControl: true,
         streetViewControl: true,
         rotateControl: false,
         fullscreenControl: true,
-        zoomcontrol: false,
+        // zoomControl: false,
+        minZoom: 7,
+        maxZoom: 12,
+        // gestureHandling: 'none',
     });
-    const marker = new google.maps.Marker({
-        position: myLatlng,
-        map,
-        title: 'click to zoom',
-    });
+    await fetch(`http://api.waqi.info/search/?token=${token}&keyword=nepal`)
+        .then(data => data.json())
+        .then(values => {
+            let { data } = values;
+            data.forEach(async item => {
+                console.log(item);
+                let lat = item.station.geo[0];
+                let long = item.station.geo[1];
+                let { name } = item.station;
+                let aqi = item.aqi;
+                const marker = new google.maps.Marker({
+                    position: {
+                        lat: lat,
+                        lng: long,
+                    },
+                    map: gmap,
+                    title: 'click to zoom',
+                    // draggable: true,
+                    animation: google.maps.Animation.DROP,
+                });
+                await fetch(
+                        `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${long}&appid=${API}`
+                    )
+                    .then(v => v.json())
+                    .then(logged => {
+                        let { list } = logged;
+                        let fd = list[0].components;
+                        const infotext = `
+                        <div class="box">
+                            <p class="name">${name}</p>
+                            <br>
+                            <h2>AQI: ${aqi}</h2>
+                                                        
+                            <br>
+                            <hr>
+                            <h3>Air Quaity</h3>
+                            <hr>
+                            <br>
+                            <ul>
+                                <li class="pollutionValue">Carbon Monoxide : ${fd.co}μg/m<sup>3</sup></li>
+                                <li class="pollutionValue">Nitrogen Monoxide : ${fd.no}μg/m<sup>3</sup></li>
+                                <li class="pollutionValue">Nitrogen Dioxide : ${fd.no2}μg/m<sup>3</sup></li>
+                                <li class="pollutionValue">Ozone : ${fd.o3}μg/m<sup>3</sup></li>
+                                <li class="pollutionValue">Sulpher Dioxide : ${fd.so2}μg/m<sup>3</sup></li>
+                                <li class="pollutionValue">Fine Particles Matter : ${fd.pm2_5}μg/m<sup>3</sup></li>
+                                <li class="pollutionValue">Ammonia : ${fd.nh3}μg/m<sup>3</sup></li>
+                                <li class="pollutionValue">PM 10 : ${fd.pm10}μg/m<sup>3</sup></li>
+                            </ul>
+                            <br>
+                        </div>`;
+                        const infowindow = new google.maps.InfoWindow({
+                            content: infotext,
+                        });
+                        marker.addListener('mouseover', () => {
+                            infowindow.open(gmap, marker);
+                        });
+                        marker.addListener('mouseout', () => {
+                            infowindow.close(gmap, marker);
+                        });
+                    });
+            });
+        });
 }
