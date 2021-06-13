@@ -148,7 +148,6 @@ async function initMap() {
                         lat: lat,
                         lng: long,
                     },
-                    icon: '../sd.png',
                     map: gmap,
                     title: 'click to zoom',
                     // draggable: true,
