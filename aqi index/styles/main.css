@@ -300,4 +300,76 @@ body {
   border: 2px solid black;
   margin-bottom: 300px;
 }
+
+.text {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.text .title {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma;
+  color: white;
+}
+
+.text h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: crimson;
+  background: white;
+  padding: 10px;
+}
+
+.text p {
+  font-family: Ubuntu;
+  font-size: 20px;
+  text-align: justify;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+}
+
+.svgmap {
+  margin: auto;
+  width: 50%;
+}
+
+.svgmap path {
+  fill: #000;
+  stroke: #7868E6;
+  cursor: pointer;
+  stroke-width: 15px;
+  -webkit-transition: fill 0.2s linear;
+  transition: fill 0.2s linear;
+}
+
+.svgmap path:hover {
+  stroke: white;
+  stroke-width: 20px;
+}
+
+.mapsvg {
+  width: 50%;
+  margin: auto;
+}
+
+.mapsvg #Nepal path {
+  stroke: black;
+  cursor: pointer;
+  stroke-width: 2px;
+  -webkit-transition: fill 0.1s fade 3s;
+  transition: fill 0.1s fade 3s;
+}
+
+.mapsvg #Nepal path:hover:not(#mainmapborder) {
+  fill: #ed2c2c;
+}
+
+.mapsvg #Nepal rect {
+  fill: transparent;
+}
+
+.mapsvg #Nepal polyline {
+  fill: transparent;
+  stroke: transparent;
+}
 /*# sourceMappingURL=main.css.map */

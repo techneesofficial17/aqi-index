@@ -4,6 +4,11 @@ const token = '91dc1ea0bf60df00ea4634884603b33aac7478a8';
 const mainKey = '38454c49-1624-42ed-b186-6ca981592b6c';
 
 /// pollution values of html text ;
+/// adding the svg into html
+// const svgdiv = document.querySelector('#svgdiv');
+// fetch('../nepalmap.svg').then(data => data.text()).then(response => {
+//     svgdiv.innerHTML = response;
+// });
 
 const co = document.getElementById('co');
 const no = document.getElementById('no');
