@@ -1,0 +1,142 @@
+{
+    "info": {
+        "detail": "_",
+        "country": "nepal",
+        "createdBy": "techNeesOfficial",
+        "link": "http://nees.eu5.net",
+        "contact": "neeswebservices@gmail.com"
+    },
+    "dataProvince": {
+        "kathmandu": {
+
+            "province": "bagmati",
+            "area code": "01",
+
+            "position": {
+                "lat": "27.7172",
+                "long": "85.3240",
+                "area": "49.45"
+            }
+        },
+        "bhaktapur": {
+            "province": "bagmati",
+            "area code": "01",
+
+            "position": {
+                "lat": "27.6710",
+                "long": "85.4298",
+                "area": "119"
+            }
+        },
+        "lalitpur": {
+            "province": "bagmati",
+            "area code": "01",
+
+            "position": {
+                "lat": "27.6588",
+                "long": "85.3247",
+                "area": "37.4"
+            }
+        },
+        "nuwakot": {
+            "province": "bagmati",
+            "area code": "010",
+
+            "position": {
+                "lat": "27.8895",
+                "long": "85.2308",
+                "area": "1121"
+            }
+        },
+        "dhading": {
+            "province": "bagmati",
+            "area code": "010",
+
+            "position": {
+                "lat": "27.9711",
+                "long": "85.8985",
+                "area": "1926"
+            }
+        },
+        "chitwan": {
+            "province": "bagmati",
+            "area code": "056",
+
+            "position": {
+                "lat": "27.5291",
+                "long": "85.3542",
+                "area": "2238"
+            }
+        },
+        "sindhuli": {
+            "province": "bagmati",
+            "area code": "047",
+
+            "position": {
+                "lat": "27.2569",
+                "long": "85.9713",
+                "area": "2491"
+            }
+        },
+        "makwanpur": {
+            "province": "bagmati",
+            "area code": "057",
+
+            "position": {
+                "lat": "27.5546",
+                "long": "85.0233",
+                "area": "2246"
+            }
+        },
+        "dolakha": {
+            "province": "bagmati",
+            "area code": "049",
+
+            "position": {
+                "lat": "27.7784",
+                "long": "86.1752",
+                "area": "2191"
+            }
+        },
+        "rammechhap": {
+            "province": "bagmati",
+            "area code": "048",
+
+            "position": {
+                "lat": "27.3193",
+                "long": "86.1039",
+                "area": "1546"
+            }
+        },
+        "sindupalanchwok": {
+            "province": "bagmati",
+            "area code": "011",
+
+            "position": {
+                "lat": "27.9512",
+                "long": "85.6846",
+                "area": "2542"
+            }
+        },
+        "kavrepalanchwok": {
+            "province": "bagmati",
+            "area code": "011",
+
+            "position": {
+                "lat": "27.5285",
+                "long": "85.6435",
+                "area": "1396"
+            }
+        },
+        "rasuwa": {
+            "province": "bagmati",
+            "area code": "010",
+
+            "position": {
+                "lat": "27.1755",
+                "long": "85.3963",
+                "area": "1544"
+            }
+        }
+    }
+}

@@ -364,6 +364,10 @@ body {
   fill: #ed2c2c;
 }
 
+.mapsvg .capital {
+  fill: #00c3ff;
+}
+
 .mapsvg #Nepal rect {
   fill: transparent;
 }

@@ -10,6 +10,28 @@ const mainKey = '38454c49-1624-42ed-b186-6ca981592b6c';
 //     svgdiv.innerHTML = response;
 // });
 
+async function svgmap() {
+    const path = document.querySelectorAll('path');
+
+    await fetch('../district_data.json')
+        .then(data => data.json())
+        .then(response => {
+            let { dataProvince } = response;
+            // info from real time API
+
+            Array.from(path).forEach(item => {
+                item.addEventListener('mouseover', () => {
+                    let dataname = item.id;
+                    let data = dataProvince + '.' + dataname;
+
+                    console.log(data);
+                });
+            });
+        });
+}
+
+svgmap();
+
 const co = document.getElementById('co');
 const no = document.getElementById('no');
 const nd = document.getElementById('nd');
@@ -26,8 +48,6 @@ if (navigator.geolocation) {
         lat = position.coords.latitude;
 
         function pollutionData() {
-            console.log(lat);
-            console.log(long);
             fetch(
                     `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${long}&appid=${API}`
                 )
@@ -148,6 +168,7 @@ async function initMap() {
                         lat: lat,
                         lng: long,
                     },
+                    icon: '../sd.png',
                     map: gmap,
                     title: 'click to zoom',
                     // draggable: true,
