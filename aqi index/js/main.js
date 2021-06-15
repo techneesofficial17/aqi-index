@@ -23,8 +23,6 @@ async function svgmap() {
                 item.addEventListener('mouseover', () => {
                     let dataname = item.id;
                     let data = dataProvince + '.' + dataname;
-
-                    console.log(data);
                 });
             });
         });
