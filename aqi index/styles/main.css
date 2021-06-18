@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital@0;1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --top: 500px;
+  --left: 850px;
+}
+
+body {
+  background: url(../pexels-vitaly-vlasov-1570099.jpg) center/cover no-repeat;
+}
+
+.navbar {
+  height: 10vh;
+  width: 100%;
+  background: #7868e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  font-family: Ubuntu;
+  display: flex;
+  -webkit-box-shadow: 0px 2px 15px 1px black;
+          box-shadow: 0px 2px 15px 1px black;
+}
+
+.navbar .titleText {
+  width: 50%;
+  margin-left: 40px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.navbar .navbtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 50px;
+}
+
+.navbar .navbtn h2 {
+  margin: auto 10px;
+  background: #440a67;
+  color: white;
+  padding: 4px 10px;
+}
+
+.mainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainContainer .homepage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainContainer .homepage .containerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainContainer .homepage .containerBox a {
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Ubuntu;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.mainContainer .homepage .containerBox .btn {
+  background: #7868e6;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 9px;
+}
+
+.homepage {
+  width: 30%;
+}
+
+.container {
+  width: 70%;
+  height: calc(100vh - 10vh);
+  color: white;
+  margin: 50px;
+}
+
+.container .divBox {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+.container .divBox input[type='text'] {
+  font-family: Ubuntu;
+  width: 500px;
+  font-size: 25px;
+  padding: 2px 4px;
+  border: 2px solid #333;
+  cursor: text;
+}
+
+.container .divBox input[type='text']:focus {
+  outline: none;
+}
+
+.container .divBox input[type='text']::-webkit-input-placeholder {
+  color: #333;
+}
+
+.container .divBox input[type='text']:-ms-input-placeholder {
+  color: #333;
+}
+
+.container .divBox input[type='text']::-ms-input-placeholder {
+  color: #333;
+}
+
+.container .divBox input[type='text']::placeholder {
+  color: #333;
+}
+
+.container .divBox .searchText {
+  margin-right: 20px;
+}
+
+.container .divBox .search {
+  font-family: Ubuntu;
+  font-size: 25px;
+  padding: 2px 10px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.container .maincontainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  place-items: center;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 20px;
+}
+
+.container .itemBox {
+  padding: 20px;
+  color: black;
+  height: 300px;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .itemBox .cityname {
+  border-top: 2px solid black;
+  font-family: Ubuntu;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.container .itemBox img {
+  width: 40%;
+  -webkit-clip-path: circle(50%);
+          clip-path: circle(50%);
+}
+
+.container .itemBox .apiData {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .itemBox .apiData .text {
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.container .itemBox .apiData .aqi {
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.color {
+  color: limegreen;
+}
+
+.pollutionIndex {
+  font-family: Helvetica;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.pollutionIndex h1 {
+  font-family: Ubuntu;
+  color: white;
+  font-weight: 700;
+}
+
+.pollutionIndex ul {
+  margin: 20px;
+  list-style: none;
+  background: #7868e6;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.pollutionIndex ul li {
+  font-size: 25px;
+}
+
+.pollutionIndex ul span {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#map {
+  margin: 0 auto;
+  height: 700px;
+  width: 1400px;
+  border: 2px solid black;
+  margin-bottom: 300px;
+}
+
+.text {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.text .title {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma;
+  color: white;
+}
+
+.text h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: crimson;
+  background: white;
+  padding: 10px;
+}
+
+.text p {
+  font-family: Ubuntu;
+  font-size: 20px;
+  text-align: justify;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+}
+
+.svgmap {
+  margin: auto;
+  width: 50%;
+}
+
+.svgmap path {
+  fill: #000;
+  stroke: #7868e6;
+  cursor: pointer;
+  stroke-width: 15px;
+  -webkit-transition: fill 0.2s linear;
+  transition: fill 0.2s linear;
+}
+
+.svgmap path:hover {
+  stroke: white;
+  stroke-width: 20px;
+}
+
+.mapsvg {
+  width: 50%;
+  margin: auto;
+}
+
+.mapsvg #Nepal path {
+  stroke: black;
+  cursor: pointer;
+  stroke-width: 2px;
+  -webkit-transition: fill 0.1s fade 3s;
+  transition: fill 0.1s fade 3s;
+}
+
+.mapsvg #Nepal path:hover:not(#mainmapborder) {
+  fill: #ed2c2c;
+}
+
+.mapsvg .capital {
+  fill: #00c3ff;
+}
+
+.mapsvg #Nepal rect {
+  fill: transparent;
+}
+
+.mapsvg #Nepal polyline {
+  fill: transparent;
+  stroke: transparent;
+}
+
+.popUp {
+  display: inline-block;
+  background: #333;
+  border-radius: 9px;
+  padding: 20px;
+  margin: 5px;
+  color: white;
+  position: absolute;
+  pointer-events: none;
+  top: var(--top);
+  left: var(--left);
+  -webkit-transform: translate(-var(--top), -var(--left));
+          transform: translate(-var(--top), -var(--left));
+  visibility: hidden;
+}
+
+.popUp ul li {
+  font-size: 14px;
+  text-align: center;
+  list-style: none;
+  padding: 3px;
+  font-family: Roboto;
+}
+
+.popUp h3 {
+  text-transform: capitalize;
+}
+
+.popUp .district {
+  margin-bottom: 10px;
+}
+
+.popUp #aqiindex {
+  font-size: 16px;
+  color: limegreen;
+  font-family: Verdana, Geneva, Tahoma;
+}
+/*# sourceMappingURL=main.css.map */
